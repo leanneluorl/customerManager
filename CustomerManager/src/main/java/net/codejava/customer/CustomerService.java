@@ -1,6 +1,7 @@
 package net.codejava.customer;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,5 +19,14 @@ public class CustomerService {
 	
 	public void save(Customer customer) {
 		repo.save(customer);
+	}
+	
+	public Customer get(long id) {
+		Optional<Customer> result = repo.findById(id);
+		return result.get();
+	}
+	
+	public void delete(long id) {
+		repo.deleteById(id);
 	}
 }

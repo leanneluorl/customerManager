@@ -30,6 +30,10 @@
 					<td>${customer.name}</td>
 					<td>${customer.email}</td>
 					<td>${customer.address}</td>
+					<td>
+						<a href="edit?id=${customer.id}">Edit</a>
+						<a href="delete?id=${customer.id}">Delete</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>
